@@ -1,0 +1,18 @@
+@startuml judgeGameSet
+start
+if(blackAveilable=0)then(yes)
+  :brdp->winerに3を代入;
+else if(whiteAveilable=0)then(yes)
+  :brdp->winerに3を代入;
+else(whiteAveilable=1)
+
+  if(brdp.stone.whiteよりbrdp.stone.blackが大きければ)then (yes)
+  :brdp->winerに0を代入;
+  elseif(brdp.stone.blackよりbrdp.stone.whiteが大きければ)then (yes)
+  :brdp->winerに1を代入;
+  else(引き分けなら)
+  :brdp->winerに2を代入;
+  endif
+endif
+stop
+@enduml

@@ -1,0 +1,11 @@
+@startuml backupBoard
+start
+  :brdp->sqStatusをbkbdp->sqStatusにコピーする;
+  :brdp->turnをbkbdp->turnにコピーする;
+  :brdp->tesuuをbkbdp->tesuuにコピーする;
+  :brdp->winerをbkbdp->winerにコピーする;
+  :brdp->gamePlayerをbkbdp->gamePlayerにコピーする;
+  :brdp->stoneをbkbdp->stoneにコピーする;
+  :終了;
+
+@enduml

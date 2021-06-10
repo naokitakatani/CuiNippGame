@@ -1,0 +1,64 @@
+@startuml mainProgram
+start
+:board構造体をmBoardとして宣言;
+:board構造体をbkpBoard[100]として宣言;
+:initBoardでmBoardを初期化;
+:initBoardでbkpBoard[100]を初期化;
+:先手(黒石)のプレイヤー名を入力してください>
+:先手プレイヤー名入力待ち<
+note right
+nippPlayer[0].nameにStringとして格納
+strcpy()関数を使用
+end note
+:後手(白石)のプレイヤー名を入力してください>
+:後手プレイヤー名の入力待ち<
+note right
+nippPlayer[1].nameにStringとして格納
+strcpy()関数を使用
+end note
+:turnに1を代入;
+note right
+初手はturn=0。つまり黒石。
+changeturnでターンが変わるので
+あらかじめ1を代入しておく。
+end note
+while(mBoard.winerが3か？)
+		:changeturn関数でターンの変更;
+		note right
+		次回のターンを格納する。
+		mBoard.turn=0の時は先手の盤操作、
+		mBoard.turn=1の時は後手の盤操作とする。
+		end note
+		repeat
+		:locatePlaceable()関数で配置可能な盤座標を取得してボードに適応|
+		note right
+		黒配置かの座標に4、白配置かの座標に8、
+		どちらも配置かの座標に12を格納
+		end note
+		:displayboard()関数で配置可能な盤座標を表示|
+		note right
+		sqStatusがturn0=なら4,12、turn=1なら
+		8,12のところの*を順番にA,B,C,D...と書き換える。
+		end note
+		:inputStonePosition()関数で石を置きたい場所を入力|
+		note right
+		プレイヤーはA,B,C,Dなどのアルファベットを
+		入力して、石の配置場所を決定する。
+		<を入力したら、1つ前のボードに戻る
+		>を入力したら、1つ後のボードに進む
+		ボードを戻したら、手数も戻す。
+		その後新しい操作が行われたら、ボード情報を上書きする。
+		end note
+		repeat while (盤を戻す/進む作業が行われたか？)
+		:locateOppStone()関数で対になる石を見つける|
+		:changeStone()関数で対となった石で挟まれた相手の石をひっくり返す|
+		:displayBoard()関数で、操作後の盤を表示|
+		:backupBoard()関数で、盤情報をバックアップ|
+		:judgeGameSet()関数を実行して勝利判定する。|
+endwhile
+:"プレイヤー名"の勝ちです>
+note right
+勝ったプレイヤーの名前を""に表示する。
+end note
+stop
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+start
+  if(一つ先の手を参照する)then (yes)
+    if(一つ先の盤面があるなら(nb=1))then (yes)
+      :backupBoardを使ってbkdrdpからdrdpにコピー;
+    else (no)
+      :1の値を返す;
+    endif
+  elseif(一つ前の盤面を参照する(nb=-1))then (yes)
+    if(参照する手数が0以上の値か?)then (yes)
+      :backupBoardを使ってbkdrdpからdrdpにコピー;
+    else (no)
+      :1の値を返す;
+    endif
+  else (nb=1以外)
+    :1の値を返す;
+  endif
+stop
+
+@enduml

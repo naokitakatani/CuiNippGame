@@ -1,0 +1,7 @@
+@startuml StructStone
+class stones{
+	+int used; //使われた石の数
+	+int black; //黒い石の数
+	+int white; //白い石の数
+}
+@enduml

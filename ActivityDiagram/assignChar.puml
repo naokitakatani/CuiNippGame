@@ -1,0 +1,23 @@
+@startuml assignChar
+start
+:盤の情報を読み込む;
+:turnを読み込む;
+:board構造体からsqStatusを読み込む;
+if(1の場合)then(yes)
+  :黒丸;
+elseif(2の場合)then(yes)
+  :白丸;
+elseif(4or8)then(yes)
+  :アルファベット;
+  if(4の場合)then(yes)
+    :4の場所にアルファベット;
+    :カウンタ数に合わせてアルファベットを返す;
+  elseif(8の場合)then(yes)
+    :4の場所にアルファベット;
+    :カウンタ数に合わせてアルファベットを返す;
+  endif
+elseif(0の場合)then(yes)
+  :＊;
+endif
+stop
+@enduml

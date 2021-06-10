@@ -1,0 +1,13 @@
+@startuml
+start
+  if(brdp構造体のwinerが0か？)then (yes)
+    :"先手の勝ちです"とディスプレイに表示させる;
+  elseif(brdp構造体のwinerが1か？)then (yes)
+    :"後手の勝ちです"とディスプレイに表示させる;
+  else (winerが2)
+    :"引き分けです"とディスプレイに表示させる;
+  endif
+
+  stop
+
+@enduml

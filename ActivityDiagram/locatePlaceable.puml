@@ -1,0 +1,20 @@
+@startuml locatePlaceable
+start
+:黒石の配置可能場所を探すを準備;
+while(xをインクリメントしながら8回繰り返す)
+if(locateOppStoneの返り値が1なら)then (yes)
+:sqStatusに4を代入;
+endif
+endwhile
+:白石の配置可能場所を探すを準備;
+while(xをインクリメントしながら8回繰り返す)
+if(locateOppStoneの返り値が1なら)then (yes)
+if(その座標のsqStatusが4なら)then (yes)
+:sqStatusに12を代入;
+else (そうでなければ)
+:sqStatusに8を代入;
+endif
+endif
+endwhile
+stop
+@enduml

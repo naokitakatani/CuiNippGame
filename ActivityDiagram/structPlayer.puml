@@ -1,0 +1,8 @@
+@startuml structPlayer
+class player{
+	+char name[30]; //プレイヤー名
+	+int preX; //配置予定座標X
+	+int preY; //配置予定座標Y
+	+int opporSiteStone[2][100]; //相手石を囲むもう一つの自分の石の座標
+}
+@enduml

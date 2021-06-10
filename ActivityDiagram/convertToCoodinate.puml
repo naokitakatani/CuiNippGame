@@ -1,0 +1,26 @@
+@startuml
+start
+if(ippがAからZの間であれば)then (yes)
+    :格納されたアルファベットが
+    Aから何番目か計算する;
+elseif(ippがaからzの間であれば)then (yes)
+    :格納されたアルファベットが
+    aから何番目か計算する;
+else (入力された文字がアルファベットでなければ);
+    :"$(入力された文字)は
+    アルファベット
+    ではありません"と表示;
+endif
+while(xの座標をインクリメントしながら8回繰り返し)
+while(yの座標をインクリメントしながら8回繰り返し)
+    if(現在のターンである石の配置可能座標なら)then (yes)
+        :countをインクリメント;
+        if(countが格納された文字の番目と一致したなら)then (yes)
+            :プレイヤー構造体のpreXに現在の座標を代入;
+            :プレイヤー構造体のpreYに現在の座標を代入;
+        endif
+    endif
+endwhile
+endwhile
+stop
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+start
+if (dxとdyがどちらも0に指定されている)then (yes)
+    :ansに0を代入;
+endif
+if (dxとdyが-1,0,1のいずれかであれば)then (yes)
+    :指定された(x,y)座標にdx,dyを加算する;
+    if(黒のターンなら)then (yes)
+        :敵駒をsqStatusの割り当て番号が2の物とする;
+        :自分の駒をsqStatusの割り当て番号が1の物とする;
+    elseif(白のターンなら)then (yes)
+        :敵駒をsqStatusの割り当て番号が1の物とする;
+        :自分の駒をsqStatusの割り当て番号が2の物とする;
+    endif
+    if(加算後の座標に敵石がある場合)then (yes)
+        repeat
+            :x,yで指定された座標にdx,dyを加算する;
+            if(盤の端まで確認したら)then (yes)
+                :ループを抜ける;
+            endif
+            if(自分の駒が見つかったら)then (yes)
+                :ansに1を代入
+                :ループを抜ける;
+            endif
+        repeat while (加算されたマスのsqStatusの値が敵の石なら繰り返す)
+    endif
+else (dxとdyが以上な値であれば)
+    :return 0を返す;
+endif
+:ansの値を返す(駒が置けるなら1,おけないなら0);
+
+stop
+@enduml

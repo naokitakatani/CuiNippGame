@@ -1,0 +1,22 @@
+@startuml
+start
+while(x軸に＋1)
+while(y軸に＋1)
+:座標をassignCharに渡す;
+:assighCharからもらった情報を盤に表示;
+if(yが0のとき)then (yes)
+:枠"----"を表示;
+elseif(y=１のとき)then (yes)
+:ターンを表示;
+elseif(y=2のとき)then (yes)
+:黒の石の数を表示;
+elseif(y=3のとき)then (yes)
+:白の石の数を表示;
+elseif(y=4)then (yes) 
+:枠"----"を表示;
+else (そうでないとき)
+endif
+endwhile
+endwhile
+stop
+@enduml

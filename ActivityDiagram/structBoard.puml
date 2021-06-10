@@ -1,0 +1,29 @@
+@startuml structBoard
+class board{
+	+int sqStatus[8][8]; //0:配置不可, 1:黒石, 2:白石 4:石なし[黒配置可], 8:石なし[白配置可] 12:石なし[黒白配置可], 16:盤の外
+	+int turn;//現在のターンを格納
+	+int tesuu;//現在の手数を格納
+	+int winer;
+	+player gamePlayer[2];
+	+stones stone;
+	+void initBoard(board *brdp);
+	+void locatePlaceable(board *brdp); 
+	+int locateOppStone(board *brdp, int x, int y);
+	+int prelocateOppStone(board *brdp, int x, int y, int dx, int dy); 
+	+int locateOppStoneAround(board *brdp, int x, int y); 
+	+void changeStone(board *brdp);
+	+void displayBoard(board *brdp);
+	+char *assignChar(board *brdp, int x, int y, int count);
+	+void backupBoard(board *brdp, board *bkbrdp);
+	+int boardTimeMachine(board *brdp, board *bkbrdp, int nb);
+	+void changeTurn(board *brdp);
+	+void displayWinner(board *brdp);
+	+void initPlayer(player *pyp);
+	+int inputStonePosition(char *sp, board *brdp, board *bkbrdp);
+	+void convertToCoodinate(board *brdp, char *ipp);
+	+void initStone(stone *stp);
+	+void judgeGameSet(board *brdp); 
+	+int blackAvailable(board *brdp); 
+	+int whiteAvailable(board *brdp); 
+}
+@enduml

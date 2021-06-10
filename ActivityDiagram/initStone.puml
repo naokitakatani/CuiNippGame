@@ -1,0 +1,8 @@
+@startuml initStone
+start
+  :stones構造体のusedに0を代入;
+  :stones構造体のblackに0を代入;
+  :stones構造体のwhiteに0を代入;
+stop
+
+@enduml

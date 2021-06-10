@@ -1,0 +1,27 @@
+@startuml
+start
+ :iを用意し0を代入;
+ if(brdp構造体のturnが0かどうか？)then (yes)
+  :iにwhiteAvailableの値を代入;
+ else (no)
+  :iにblackAvailableの値を代入;
+ endif
+ if(iが0かどうか？)then (yes)
+  if(brdp構造体のturnが0かどうか？)then(yes)
+  :turnに1を代入;
+  else (no)
+  if(board構造体のturnが1かどうか?)then(yes)
+  :turnに0を代入;
+  else(no)
+  :turnに0を代入
+(turnに0か1以外が代入されていた場合の対応);
+  endif
+  endif
+  else(no)
+  endif
+ :tesuuに+1をする;
+
+  stop
+
+@enduml
+

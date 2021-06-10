@@ -1,0 +1,9 @@
+@startuml initPlayer
+start
+  :player構造体のname[30]に""を代入;
+  :player構造体のpreXに0を代入;
+  :player構造体のpreYに0を代入;
+  :player構造体のopporsiteStoneに0を代入;
+stop
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+start
+repeat
+repeat
+if (sqStatusに4があるか)then(yes)
+  :0を返す;
+elseif (sqStatusに12があるか)then (yes)
+  :0を返す;
+else(no)
+  :1を返す;
+endif
+repeat while(x+1)
+repeat while(y+1)
+stop
+@enduml

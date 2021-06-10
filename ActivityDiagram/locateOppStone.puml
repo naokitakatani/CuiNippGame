@@ -1,0 +1,12 @@
+@startuml lacateOppStone
+start
+:0で先手、1で後攻のプレイヤーとして開始する(turn内の値);
+:prelocateOppStone関数を八方向分(8回)呼び出す。;
+:prelocateOppStone関数からの返り値をansに格納。; 
+    if (prelocateOppStoneのreturnが1でかつ、淵の円周上にあるか) then(yes)
+        :locateOppStoneAround関数を呼び出す;
+        :locateOppStoneAround関数からの返り値をansに格納。;
+    endif
+    :返り値を返す。;
+stop
+@enduml
